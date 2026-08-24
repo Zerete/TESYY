@@ -1,0 +1,16 @@
+<div class="home-container">
+  <h1>Bienvenido</h1>
+  @if (account) {
+    <p>
+      Usuario:
+      <strong>{{ account.username }}</strong>
+    </p>
+    <p>
+      Nombre:
+      <strong>{{ account.name }}</strong>
+    </p>
+  }
+  <button type="button" (click)="logout()">
+    Cerrar sesión
+  </button>
+</div>
