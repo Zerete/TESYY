@@ -1,9 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
-  imports: [],
   selector: 'app-login',
-  styleUrl: './login.scss',
+  standalone: true,
+  imports: [],
   templateUrl: './login.html',
+  styleUrl: './login.scss',
 })
-export class Login {}
+export class LoginComponent {
+  private authService = inject(AuthService);
+
+  login(): void {
+    this.authService.login();
+  }
+}
