@@ -1,16 +1,20 @@
 <div class="home-container">
   <h1>Bienvenido</h1>
   @if (account) {
-    <p>
-      Usuario:
-      <strong>{{ account.username }}</strong>
-    </p>
-    <p>
-      Nombre:
-      <strong>{{ account.name }}</strong>
-    </p>
+    <p>Usuario: <strong>{{ account.username }}</strong></p>
+    <p>Nombre: <strong>{{ account.name }}</strong></p>
   }
-  <button type="button" (click)="logout()">
-    Cerrar sesión
-  </button>
+  
+  <hr>
+  <h3>Prueba de Backend</h3>
+  <button type="button" (click)="llamarApi()">Consultar API Protegida</button>
+  
+  @if (mensajeApi) {
+    <div style="margin-top: 15px; padding: 10px; background: #e0f7fa; border-left: 4px solid #00acc1;">
+      <strong>Respuesta del Backend:</strong> {{ mensajeApi }}
+    </div>
+  }
+
+  <hr>
+  <button type="button" (click)="logout()">Cerrar sesión</button>
 </div>
