@@ -8,8 +8,9 @@ import { MSALInstanceFactory } from './factories/msal-instance.factory';
 
 export function MSALInterceptorConfigFactory(): MsalInterceptorConfiguration {
   const protectedResourceMap = new Map<string, Array<string>>();
-  // Mapeamos la URL del backend al scope de Entra ID
-  protectedResourceMap.set('http://localhost:8081/api/*', ['api://1e8ab7c6-22fe-4cd0-9a84-b3ae3cf10659/OT.Create']);
+  
+  // Mapeamos la URL del backend al scope de Entra ID con tu URI real
+  protectedResourceMap.set('http://localhost:8081/api/*', ['api://2744e995-bfb7-42ae-8ca7-b4db99e3eaf6/OT.Create']);
 
   return {
     interactionType: InteractionType.Redirect,
